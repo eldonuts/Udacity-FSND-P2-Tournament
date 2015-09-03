@@ -3,6 +3,8 @@
 #### Description
 This project was created as part of the Udacity Full Stack Web Developer Nanodegree. It's purpose is to interface with a PSQL database and keep tracking of players, standings and match ups for a tournament.
 
+*Note: Code currently only supports even pairings*
+
 #### Setup
 1. Ensure Python 2.7 and psql are installed.
 2. Clone the git repo to a local directory.
