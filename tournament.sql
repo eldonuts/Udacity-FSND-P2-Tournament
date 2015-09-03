@@ -1,10 +1,10 @@
 -- Table definitions for the tournament project.
---
--- Put your SQL 'create table' statements in this file; also 'create view'
--- statements if you choose to use it.
---
--- You can write comments in this file by starting them with two dashes, like
--- these lines here.
+
+
+-- Connect to different database so tournament is free to drop.
+\c postgres
+
+DROP DATABASE IF EXISTS tournament;
 
 CREATE DATABASE tournament;
 \c tournament;
@@ -15,15 +15,15 @@ CREATE TABLE players(
 );
 
 CREATE TABLE matches(
-    p1 integer references players(id),
-    p2 integer references players(id),
-    winner integer references players(id)
+    match_id serial primary key,
+    winner int references players(id),
+    loser int references players(id)
 );
 
 CREATE VIEW matchesPerPlayer AS
     SELECT id, COUNT(players.id)::integer AS played
         FROM players, matches
-        WHERE players.id = matches.p1 OR players.id = matches.p2
+        WHERE players.id = matches.winner OR players.id = matches.loser
         GROUP BY id
         ORDER BY played DESC
 ;
