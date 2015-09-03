@@ -1,2 +1,16 @@
 
 .idea/workspace.xml
+
+.idea/modules.xml
+
+.idea/.name
+
+.idea/misc.xml
+
+.idea/tournament.iml
+
+.idea/vcs.xml
+
+tournament_test.py
+
+tournament.pyc
