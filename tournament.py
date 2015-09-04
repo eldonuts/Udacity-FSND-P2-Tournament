@@ -65,7 +65,8 @@ def reportMatch(winner, loser):
 def swissPairings():
     """
     Returns pairs of players for the next round of a match
-    in a list of tuples, each of which contains (id1, name1, id2, name2)
+    in a list of tuples, each of which contains (id1, name1, id2, name2).
+    Currently only supports even number of players.
     """
     pairingList = [] #Create an empty pairing list to add to soon.
     standings = playerStandings() #Grab player standings from standings function (already sorted by wins)
